@@ -60,5 +60,17 @@ void deleteval(node* &head,int key){
     temp->next=temp->next->next;
     delete todelete;
 }
-
+// Function to reverse the list
+void reverse( node **head) {
+     node *temp = NULL;
+     node *prev = NULL;
+     node *current = (*head);
+    while(current != NULL) {
+        temp = current->next;
+        current->next = prev;
+        prev = current;
+        current = temp;
+    }
+    (*head) = prev;
+}
 
