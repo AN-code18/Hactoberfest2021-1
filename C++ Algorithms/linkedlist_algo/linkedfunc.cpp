@@ -73,4 +73,16 @@ void reverse( node **head) {
     }
     (*head) = prev;
 }
-
+//recursive
+Node* reverse(Node* head)
+    {
+        if (head == NULL || head->next == NULL)
+            return head;
+        // Recursive call
+        Node* rest = reverse(head->next);
+        head->next->next = head;
+        
+        head->next = NULL;
+ 
+        return rest;
+    }
